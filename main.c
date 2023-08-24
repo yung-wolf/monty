@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include "monty.h"
 
 void glb_var(void);
@@ -16,8 +17,6 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 1;
 	size_t num_read = 0;
 
-	size_t getline(char **lineptr, size_t *n, FILE *stream), neg_one_test = -1;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -31,7 +30,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&line, &num_read, file) != neg_one_test)
+	while (getline(&line, &num_read, file) != -1)
 	{
 		opcode = strtok(line, " \t\n");
 		arg = strtok(NULL, " \t\n");

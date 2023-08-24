@@ -46,5 +46,6 @@ int is_num(char *n);
 void push(stack_t **stack, char *n, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 extern stack_t *stack; 
+void exec_opcode_func(char *opcode, char *arg, unsigned int line_number);
 
 #endif

@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 			else if (strcmp(opcode, "pall") == 0)
 				pall(&stack, line_number);
 		}
+		line_number++;
 	}
 
 	fclose(file);

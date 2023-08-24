@@ -1,5 +1,7 @@
 #include "monty.h"
 
+stack_t *stack = NULL;
+
 /**
  * main - check/ run codes
  * @argc - args count
@@ -12,6 +14,8 @@ int main(int argc, char *argv[])
 	char *opcode, *arg, *line = NULL;
 	unsigned int line_number = 1;
 	size_t num_read = 0;
+
+	size_t getline(char **lineptr, size_t *n, FILE *stream), neg_one_test = -1;
 
 	if (argc != 2)
 	{
@@ -26,7 +30,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&line, &num_read, file) != -1)
+	while (getline(&line, &num_read, file) != neg_one_test)
 	{
 		opcode = strtok(line, " \t\n");
 		arg = strtok(NULL, " \t\n");
@@ -43,7 +47,7 @@ int main(int argc, char *argv[])
 				push(&stack, arg, line_number);
 			}
 			else if (strcmp(opcode, "pall") == 0)
-				pall(&stack, line_number;
+				pall(&stack, line_number);
 		}
 	}
 

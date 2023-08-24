@@ -1,7 +1,6 @@
 #include "monty.h"
 
 /* GLOBAL Variable */
-stack_t *stack = NULL;
 
 
 /**
@@ -27,7 +26,7 @@ int is_num(char *n)
 /**
  * push - push element to top of stack
  * @stack: stack
- * @n - int n parsed as char from token
+ * @n: int n parsed as char from token
  * @line_number: line number of n
  */
 void push(stack_t **stack, char *n, unsigned int line_number)
@@ -52,7 +51,7 @@ void push(stack_t **stack, char *n, unsigned int line_number)
 	i = atoi(n);
 	new_node->n = i;
 	new_node->prev = NULL;
-	
+
 	if (*stack == NULL)
 		new_node->next = NULL;
 	else
@@ -67,11 +66,13 @@ void push(stack_t **stack, char *n, unsigned int line_number)
 /**
  * pall - prints elements in stack from top to bottom
  * @stack: custome stack
- * @line_number = current line number
+ * @line_number: current line number
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stact_t *ptr = *stack;
+	stack_t *ptr = *stack;
+
+	(void) line_number;
 
 	while (ptr != NULL)
 	{

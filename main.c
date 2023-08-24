@@ -1,5 +1,6 @@
 #include "monty.h"
 
+void glb_var(void);
 stack_t *stack = NULL;
 
 /**

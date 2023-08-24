@@ -4,8 +4,8 @@ stack_t *stack = NULL;
 
 /**
  * main - check/ run codes
- * @argc - args count
- * @argv - arguments
+ * @argc: args count
+ * @argv: arguments
  * Return: 0 on success
  */
 int main(int argc, char *argv[])

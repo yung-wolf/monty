@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 			else if (strcmp(opcode, "pall") == 0)
 				pall(&stack, line_number);
 			else
-				exec_opcode_func(opcode, arg, line_number);
+				exec_opcode_func(opcode, line_number);
 		}
 	}
 

@@ -1,19 +1,25 @@
 #include "monty.h"
 
-void exec_opcode_func(char *opcode, char *arg, unsigned int line_number)
+/**
+ * exec_opcode_func - execute opcode
+ * @opcode: opcode
+ * @line_number: line number
+ * Return: ptr to opcode
+ */
+void exec_opcode_func(char *opcode, unsigned int line_number)
 {
 	int x = 0;
 
 	instruction_t instructions[] = {
-		{"pall"; pall},
+		{"pall", pall},
 		{NULL, NULL}
 	};
 
 	while (x < 2)
 	{
-		if (strcmp(f, instructions[i].opcode) == 0)
+		if (strcmp(opcode, instructions[x].opcode) == 0)
 		{
-			instructions[i].f(&stack, line_number;
+			instructions[x].f(&stack, line_number);
 			return;
 		}
 		x++;

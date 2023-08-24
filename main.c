@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file;
 	char *opcode, *arg, *line = NULL;
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 	size_t num_read = 0;
 
 	if (argc != 2)
@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
 
 	while (getline(&line, &num_read, file) != -1)
 	{
+		line_number++;
 		opcode = strtok(line, " \t\n\a\r;:");
 		arg = strtok(NULL, " \t\n\a\r;:");
 
@@ -49,7 +50,6 @@ int main(int argc, char *argv[])
 			else if (strcmp(opcode, "pall") == 0)
 				pall(&stack, line_number);
 		}
-		line_number++;
 	}
 
 	fclose(file);

@@ -12,6 +12,7 @@ void exec_opcode_func(char *opcode, unsigned int line_number)
 
 	instruction_t instructions[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 

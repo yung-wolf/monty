@@ -72,6 +72,9 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr = *stack;
 
+	if (!stack || !*stack)
+		return;
+
 	(void) line_number;
 
 	while (ptr != NULL)
@@ -79,4 +82,20 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}
+}
+
+
+/**
+ * pint - print top element of stack
+ * @stack: stack
+ * @line_number: line number
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack)
+	{
+		fprintf(stderr, "L%u: can't pint, empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }

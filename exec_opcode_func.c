@@ -6,7 +6,7 @@
  * @line_number: line number
  * Return: ptr to opcode
  */
-void exec_opcode_func(char *opcode, unsigned int line_number)
+void (*exec_opcode_func(char *opcode))(stack_t **stack, unsigned int line_number)
 {
 	int x = 0;
 

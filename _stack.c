@@ -124,7 +124,7 @@ void pop(stack_t **stack, unsigned int line_number)
 		else
 		{
 			*stack = (*stack)->next;
-			(*stack->prev) = NULL;
+			(*stack)->prev = NULL;
 			free(ptr);
 		}
 	}

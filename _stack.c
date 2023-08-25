@@ -1,8 +1,5 @@
 #include "monty.h"
 
-/* GLOBAL Variable */
-
-
 /**
  * is_num - iterates each character of string to check of isdigit
  * @n: integer

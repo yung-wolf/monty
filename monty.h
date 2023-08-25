@@ -4,8 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <ctype.h>
-#include "monty.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 
 /* Data Structures */
@@ -49,5 +52,7 @@ extern stack_t *stack;
 void exec_opcode_func(char *opcode, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 #endif

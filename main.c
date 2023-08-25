@@ -50,7 +50,16 @@ int main(int argc, char *argv[])
 			else if (strcmp(opcode, "pall") == 0)
 				pall(&stack, line_number);
 			else
-				exec_opcode_func(opcode, line_number);
+			{
+				if (ex_opcode_func(opcode) != 0)
+					ex_opcode_func(opcode)(&stack, line_number);
+				else
+				{
+					fprintf(stderr, "L%u: unknow instruction %s\n", line_number, opcode);
+					free_stack(&stack);
+					exit(EXIT_FAILURE);
+				}
+			}
 		}
 	}
 

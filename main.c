@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 					ex_opcode_func(opcode)(&stack, line_number);
 				else
 				{
-					fprintf(stderr, "L%u: unknow instruction %s\n", line_number, opcode);
+					fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 					free_stack(&stack);
 					exit(EXIT_FAILURE);
 				}
